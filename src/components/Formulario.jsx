@@ -29,7 +29,7 @@ const Formulario = ({noticias}) => {
       </Form.Group>
       <hr></hr>
     </Form>
-    <ListaNoticias></ListaNoticias>
+    <ListaNoticias noticas={noticias} categoria={categoria}></ListaNoticias>
     </>
   );
 };
