@@ -14,7 +14,7 @@ const Noticia = ({noticia}) => {
            {noticia.description}
           </Card.Text>
           <Card.Footer>
-            <Button variant="primary">Ver noticia completa</Button>
+           <a href={noticia.link} target="_blank" className="text-decoration-none">Ver noticia completa</a>
           </Card.Footer>
         </Card.Body>
       </Card>
