@@ -1,7 +1,8 @@
 import { Form } from "react-bootstrap";
-
+import ListaNoticias from "./ListaNoticias";
 const Formulario = () => {
   return (
+    <>
     <Form className="container">
       <Form.Group className="row align-items-center" controlId="formBasicEmail">
         <div className="col-md-2">
@@ -18,6 +19,8 @@ const Formulario = () => {
       </Form.Group>
       <hr></hr>
     </Form>
+    <ListaNoticias></ListaNoticias>
+    </>
   );
 };
 
