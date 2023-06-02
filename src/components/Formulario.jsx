@@ -1,6 +1,8 @@
 import { Form } from "react-bootstrap";
 import ListaNoticias from "./ListaNoticias";
-const Formulario = () => {
+import { useState } from "react";
+const Formulario = ({noticias}) => {
+    const [categoria, setCategoria] = useState('');
   return (
     <>
     <Form className="container">
@@ -9,11 +11,19 @@ const Formulario = () => {
           <Form.Label>Buscar por categorias:</Form.Label>
         </div>
         <div className="col-md-10">
-          <Form.Select id="categoria">
-            <option>Categoria 1</option>
-            <option>Categoria 2</option>
-            <option>Categoria 3</option>
-            <option>Categoria 4</option>
+          <Form.Select id="categoria" value={categoria} onChange={(e)=>setCategoria(e.target.value)}>
+            <option>business</option>
+            <option>entertainment</option>
+            <option>environment</option>
+            <option>food</option>
+            <option>health</option>
+            <option>politics</option>
+            <option>science</option>
+            <option>sports</option>
+            <option>technology</option>
+            <option>top</option>
+            <option>tourism</option>
+            <option>world</option>
           </Form.Select>
         </div>
       </Form.Group>
