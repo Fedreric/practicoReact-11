@@ -3,6 +3,13 @@ import ListaNoticias from "./ListaNoticias";
 import { useState } from "react";
 const Formulario = ({noticias}) => {
     const [categoria, setCategoria] = useState('');
+    const listaNoticias = [...noticias]
+    const noticiasFiltradas = listaNoticias.filter((noticia) =>{
+        const noticiaCategoria = noticia.category;
+        if(noticiaCategoria.includes(categoria)){
+            return noticia;
+        }
+    } )
   return (
     <>
     <Form className="container">
@@ -29,7 +36,7 @@ const Formulario = ({noticias}) => {
       </Form.Group>
       <hr></hr>
     </Form>
-    <ListaNoticias noticas={noticias} categoria={categoria}></ListaNoticias>
+    <ListaNoticias noticiasFiltradas={noticiasFiltradas}></ListaNoticias>
     </>
   );
 };

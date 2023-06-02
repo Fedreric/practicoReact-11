@@ -1,15 +1,15 @@
 import { Card, Col, Button } from "react-bootstrap";
 
-const Noticia = () => {
+const Noticia = ({noticia}) => {
   return (
     <Col md={6} lg={3} className="my-2">
       <Card>
-        <Card.Img variant="top" src="https://media.datacenterdynamics.com/media/images/Extra.width-880.jpg" />
+        <Card.Img variant="top" src={noticia.image_url} />
         <Card.Body>
-          <Card.Title>Titulo de noticia</Card.Title>
-          <Card.Subtitle className="text-muted">Autor</Card.Subtitle>
-          <Card.Text>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, a corporis suscipit magni itaque nemo doloremque modi aspernatur sapiente repellendus?
+          <Card.Title>{noticia.title}</Card.Title>
+          <Card.Subtitle className="text-muted">{noticia.creator}</Card.Subtitle>
+          <Card.Text className="descripcion">
+           {noticia.description}
           </Card.Text>
           <Card.Footer>
             <Button variant="primary">Ver noticia completa</Button>
