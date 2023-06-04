@@ -2,9 +2,13 @@ import { Form } from "react-bootstrap";
 import ListaNoticias from "./ListaNoticias";
 import { useState,useEffect } from "react";
 const Formulario = () => {
-  const [noticias, setNoticias] = useState([]);
   const [categoria, setCategoria] = useState("");
+  const [noticias, setNoticias] = useState([]);
 
+  useEffect(() => {
+    consultarApi(categoria)
+  }, [categoria])
+  
   const consultarApi = async (categoria) => {
     try {
       const respuesta = await fetch(
@@ -14,6 +18,7 @@ const Formulario = () => {
       const dato = await respuesta.json();
       setNoticias(dato.results);
       console.log(dato.results)
+      console.log(categoria)
     } catch (e) {
       console.log(e);
     }
@@ -32,8 +37,10 @@ const Formulario = () => {
             <Form.Select
               id="categoria"
               value={categoria}
-              onChange={(e) => setCategoria(e.target.value)}
-              onInput={()=>{consultarApi(categoria)}}
+              onChange={(e) => {
+                setCategoria(e.target.value)
+                // consultarApi(categoria)
+              }}
             >
               <option>business</option>
               <option>entertainment</option>

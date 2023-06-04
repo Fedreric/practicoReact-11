@@ -2,20 +2,20 @@ import { Card, Col, Button } from "react-bootstrap";
 import noFoto from "../assets/noFoto.png"
 
 const Noticia = ({noticia}) => {
-    const imagen = noticia.image_url? ( <Card.Img variant="top" src={noticia.image_url} />):( <Card.Img variant="top" src={noFoto} />)
+    const imagen = noticia?.image_url? ( <Card.Img variant="top" src={noticia?.image_url} />):( <Card.Img variant="top" src={noFoto} />)
   return (
     <Col md={6} lg={3} className="my-2">
       <Card>
         {imagen}
         <Card.Body>
-          <Card.Title>{noticia.title}</Card.Title>
-          <Card.Subtitle className="text-muted">{noticia.creator}</Card.Subtitle>
-          <Card.Subtitle className="text-muted my-5">{noticia.categoy}</Card.Subtitle>
+          <Card.Title>{noticia?.title}</Card.Title>
+          <Card.Subtitle className="text-muted">{noticia?.creator}</Card.Subtitle>
+          <Card.Subtitle className="text-muted my-5">{noticia.category}</Card.Subtitle>
           <Card.Text className="descripcion">
-           {noticia.description}
+           {noticia?.description}
           </Card.Text>
           <Card.Footer>
-           <a href={noticia.link} target="_blank" className="text-decoration-none">Ver noticia completa</a>
+           <a href={noticia?.link} target="_blank" className="text-decoration-none">Ver noticia completa</a>
           </Card.Footer>
         </Card.Body>
       </Card>
