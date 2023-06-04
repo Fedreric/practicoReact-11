@@ -10,6 +10,7 @@ const Noticia = ({noticia}) => {
         <Card.Body>
           <Card.Title>{noticia.title}</Card.Title>
           <Card.Subtitle className="text-muted">{noticia.creator}</Card.Subtitle>
+          <Card.Subtitle className="text-muted my-5">{noticia.categoy}</Card.Subtitle>
           <Card.Text className="descripcion">
            {noticia.description}
           </Card.Text>
